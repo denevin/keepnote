@@ -482,15 +482,16 @@ class KeepNoteWindow (gtk.Window):
             dialog.set_current_folder(path)
 
         file_filter = gtk.FileFilter()
-        file_filter.add_pattern("*.nbk")
-        file_filter.set_name(_("Notebook (*.nbk)"))
-        dialog.add_filter(file_filter)
-
-        file_filter = gtk.FileFilter()
         file_filter.add_pattern("*")
         file_filter.set_name(_("All files (*.*)"))
         dialog.add_filter(file_filter)
 
+        file_filter = gtk.FileFilter()
+        file_filter.add_pattern("*.nbk")
+        file_filter.set_name(_("Notebook (*.nbk)"))
+        
+        dialog.add_filter(file_filter)
+        
         response = dialog.run()
 
         if response == gtk.RESPONSE_OK:
