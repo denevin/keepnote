@@ -481,6 +481,8 @@ class KeepNoteWindow (gtk.Window):
         if os.path.exists(path):
             dialog.set_current_folder(path)
 
+		# changed order
+		
         file_filter = gtk.FileFilter()
         file_filter.add_pattern("*")
         file_filter.set_name(_("All files (*.*)"))
